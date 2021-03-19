@@ -1,0 +1,308 @@
+<!doctype HTML>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>渉外局</title>
+        <meta name="description" content="渉外局">
+        <link rel="icon" type="png" href="logo.png">
+        <link rel="stylesheet" href="shougai.css">
+    </head>
+
+    <body>
+        <header>
+            <!--▽▽ヘッダーロゴ▽▽-->
+                  <div class="logo1">
+                      <a href="#" id="headerlogo"><img src="headericon.png" class="hedlogo">
+                      </a>
+                  </div>
+            <!--△△ヘッダーロゴ△△-->
+            
+            
+            <!--▽▽ハンバーガーメニュー▽▽-->
+                  <div id="hamburger">
+                      <div class="icon">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                      </div>
+                  </div>
+            <!--△△ハンバーガーメニュー△△-->
+            
+             
+            <!--▽▽ハンバーガーメニューのリスト▽▽-->
+                  <nav class="sm navi">
+                    <ul class="lists">
+                      <li class="lili"><a  class="listwords" href="#">代表挨拶</a></li>
+                      <li class="lili"><a  class="listwords" href="#">早稲田祭について</a></li>
+                      <li class="lili"><a  class="listwords" href="#">新歓イベント</a></li>
+                      <li class="lili"><a  class="listwords" href="#">活動について</a></li>
+                      <li class="lili"><a  class="listwords" href="#">連載記事</a></li>
+                      <li class="lili"><a  class="listwords" href="#">年間スケジュール</a></li>
+                      <li class="lili"><a  class="listwords" href="#">フォトギャラリー</a></li>
+                      <li class="lili"><a  class="listwords" href="#">入会方法</a></li>
+                      <li class="lili"><a  class="listwords" href="#">お問い合わせ</a></li>
+                   </ul>
+                 </nav>
+            <!--△△ハンバーガーメニューのリスト△△-->
+            
+        
+            <!--▽▽ヘッダーリスト▽▽-->
+                  <nav class="pc navi">  <!--pcクラスを追記-->
+                    <ul class="lists">
+                      <li class="lili"><a  class="listwords" href="#">代表挨拶</a></li>
+                      <li class="lili"><a  class="listwords" href="#">新歓イベント</a></li>
+                      <li class="lili"><a  class="listwords" href="#">連載記事</a></li>
+                      <li class="lili"><a  class="listwords" href="#">入会方法</a></li>
+                      <li class="lili"><a  class="listwords" href="#">お問い合わせ</a></li>
+                    </ul>
+                  </nav>
+            <!--△△ヘッダーリスト△△-->
+            
+                </header>
+            
+            
+            <!--▽▽jQuery▽▽-->
+                <script src="jquery-3.6.0.min.js"></script>
+                  <script>
+                    $('#hamburger').on('click', function(){
+                    $('.icon').toggleClass('close');
+                    $('.sm').slideToggle();
+                    });
+              
+                  </script>
+            <!--△△jQuery△△-->
+ 
+
+
+        <style>
+            header {
+    height: 60px;
+    width: 100%;
+    padding: 0px 0px;
+    background-color:#78c1cd;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+  }
+  
+  
+  .lili:hover{
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+  
+  }
+  
+  .logo1 {
+    font-size: 25px;}
+    
+    .hedlogo{
+  height:55px;
+  width:55px;
+  margin-left:6px;
+    }
+    
+  
+  .hedlogo:hover  {
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+   
+  }
+   .navi{
+    margin: 0 0 0 auto;
+  }
+  
+  .lists {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listwords {
+    color: #eaf4fc;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+  }
+  
+  .sm {
+    display: none;
+  }
+  .toppagelogo{
+    height:500px;
+    width:500px;
+    padding:400px;
+  margin:0 auto;
+  }
+  /*---------------------------------------------------------------*/
+  @media (max-width: 900px) {
+  
+    .pc {
+      display: none;
+    }
+  
+    #hamburger {
+      background-color: transparent;
+      position:relative;
+      float:right
+      cursor:pointer;
+      margin: 0 0 0 auto;
+      height: 60px;
+      width: 60px;
+    }
+  
+    .icon span {
+      position: absolute;
+      left: 15px;
+      width: 30px;
+      height: 4px;
+      background-color:#eaf4fc;
+      border-radius: 8px;
+      transition: ease 0.75s;
+    }
+  
+    .icon span:nth-of-type(1) {
+      top: 16px;
+    }
+    .icon span:nth-of-type(2) {
+      top: 28px;
+    }
+    .icon span:nth-of-type(3) {
+      bottom: 16px;
+    }
+  
+    .close span:nth-of-type(1) {
+      transform: rotate(45deg);
+      top: 28px;
+    }
+  
+    .close span:nth-of-type(2) {
+      opacity: 0;
+    }
+  
+    .close span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        top: 28px;
+    }
+  
+    .sm {
+        top: 60px;
+        left: 0px;
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        background-color: #78c1cd;
+        
+    
+    }
+  
+   .lists {
+      flex-direction: column;
+    }
+  
+    .listwords {
+      text-align: center; 
+      border-top: solid 0.5px #eaf4fc;
+    }
+  
+  
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+        </style>
+
+        <div class="titlephoto">
+        <img src="渉外局.png" alt="渉外局" width="100%" height="auto">
+        </div>
+
+        <div class="wrapper">
+        <h2>渉外局とは</h2>
+        <p class="setsumei">
+          渉外局は「外部主体」の方々との関係を構築していくことで、早稲田祭へのご理解・ご支援、信頼を頂けるよう日々活動しています。
+          「外部主体」というのは主に「企業」「校友（OBOG）」「地域」の方々です。
+          日本一と称される早稲田祭は、早大生だけではなく沢山の方々のご協力のもとに成り立っています。 
+          外部主体の方々と関わることができるのは渉外局だけなので、運営スタッフの「顔」としてやりがいと誇りを持って仕事に臨むことが出来ます。
+          「早大生」だからこそできる経験は、自分自身を成長させてくれること間違いなしです！ 
+          これだけ聞くと「お堅い人の集まりなんじゃないか……」と不安に思う人もいるかもしれません。
+          ですが、渉外局は運営スタッフの8局の中でも比較的小規模な部署のため、学年問わず局員全員と仲良くなれちゃいます。
+          大学生活での居場所になることをお約束します！ 自分を変えたい、成長できる仕事がしたいあなたを渉外局でお待ちしています！
+
+        </p>
+        
+        <h3>○企業チーム
+        </h3>
+        <p>
+            <!-- チーム紹介の文字情報をここに入れる -->
+            企業チームは「早稲田祭を運営するための財を獲得する」ことが仕事です。実際に企業の方とコンタクトをとり、広告費としてご協賛をいただきます。時にはスーツを着て、営業に行くことも……
+その分責任は大きいですが、大学生のうちに社会人のような経験ができる、とてもやりがいのあるチームです！ 「難しそうだな……」と思うかもしれませんが、最初は誰もが初心者なのでご心配なく。既存スタッフが新入生のみなさんを万全の体制でサポートします！ このチームは人数が多くない分、とてもアットホームな場所です。「実家のような安心感」を求めているそこのあなた！ 企業チームが、あなたを待っています！
+
+        </p>
+
+
+
+        <h3>◯校友チーム
+        </h3>
+        <p>
+             <!-- チーム紹介の文字情報をここに入れる -->
+             校友チームは早稲田大学の卒業生である校友の方に、早稲田祭へのご支援・ご理解を頂くため活動しています。
+校友の方が開く稲門会に参加し、はっぴを着てスピーチをしたり、校友を招いて親睦を深めたりと信頼関係を築いています。
+名刺の渡し方から目上の方との話し方まで学ぶことができ、社会に出てから役立つビジネスマナーも習得できちゃいます。また、各界で活躍する校友の方からはたくさんの刺激が刺激がもらえるうえに、有益な情報などをどんどん吸収できるので成長すること間違いなし！
+さらに稲門会で頑張るとおいしいお食事が食べられるというオプション付き(笑)
+みなさんも少し大人なエグゼクティブな世界で、私たちと一緒にかけがえなのない学生生活を送りましょう！
+
+        </p>
+
+
+        <h3>○地域チーム
+        </h3>
+        <p>
+            <!-- チーム紹介の文字情報をここに入れる -->
+            渉外局は早稲田祭の開催資金を獲得するだけの部署だと思っていませんか？ いいえ、それだけではありません！ 私たち地域チームは人と人とのつながりを大切にし、大学周辺の地域の方々との信頼関係を構築することに尽力しています！
+例年は早稲田の街で開催されるさまざまなイベントに参加したり、地域の方との親睦会を開催するなどして、早稲田祭と早稲田という街の架け橋となる役割を担っています。早稲田祭を開催するには早稲田の街にお住まいの方々のご理解やご協力が不可欠です。
+早稲田祭や早稲田という街が大好きになる地域チームで、祭を支えてみませんか？
+
+        </p>
+
+        </div>
+        </body>
+        <footer>
+
+            <div class="wrapper2">
+                <p class="title">WASEDASAI OPERATION STAFF</br>SHINKAN 2021</p>
+                <div class="innerbox">
+                      
+                    <a href="https://twitter.com/wasedasai_new?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" > 
+                        <img src="twitter.png" alt="twitter" width="80" height="80"　border="0"> 
+                    </a>
+    
+                    <a href="https://www.instagram.com/wasedasai_new/" target="_blank" > 
+                        <img src="instagram.png" alt="instagram" width="80" height="80"　border="0"> 
+                    </a>
+    
+                    <a href="https://qr-official.line.me/sid/M/011uqnra.png" target="_blank" > 
+                        <img src="line.png" alt="line" width="80" height="80"　border="0"> 
+                    </a>
+    
+                    <a href="https://www.youtube.com/channel/UCFh9blapIkxPf4Al3L87QHQ" target="_blank" > 
+                        <img src="youtube.png" alt="youtube" width="80" height="80"　border="0"> 
+                    </a>
+                </div>
+            </div>
+                <div class="footerlogo">
+                    <a href="toppage.html" target="_blank" > 
+                        <img src="footerlogo.png" alt="footerlogo" width="40%" height="40%"　border="0"> 
+                    </a>
+                </div>
+    
+    
+                </div>
+                <p><small>Copyright @ WASEDASAI2021 Staff All Rights Reserved. </small></p>
+            </div>
+        </footer>
+    </html>
